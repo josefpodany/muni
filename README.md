@@ -1,4 +1,5 @@
-# muni
+# MUNI
+Projects from my bachelor's studies in Mathematical Informatics at Masaryk's University. All projects were uploaded with consent of my teachers and TAs.
 
 ## Table of contents
 
