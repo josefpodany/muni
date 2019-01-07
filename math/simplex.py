@@ -23,7 +23,7 @@ def simplex_method(func, restr):
     restrictions: [[1, 2, 0, 0, 300], [2, 3, 1, 1, 500]]
     '''
     if all([len(i) == len(func) + 1 for i in restr]):
-        function = func[:]
+        function = [-i for i in func]
         restrictions = [row[:] for row in restr]
         # Create slack variables in header
         function += (len(restrictions) + 1) * [0]
