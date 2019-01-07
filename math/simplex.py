@@ -38,5 +38,12 @@ def simplex_method(func, restr):
  amount of variables than maximaliazation function by one")
 
 
+def iterate(function, restriction):
+    # TODO: documentation, implentation
+    if any(i < 0 for i in function):
+        return False
+    return True
+
+
 if __name__ == "__main__":
     simplex_method([1, 2], [[1, 2, 3], [1, 2, 3]])
