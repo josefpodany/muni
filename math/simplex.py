@@ -12,5 +12,8 @@ row_n   rn1 rn2 rn3 ... rnn 0   0   0   ... 1   restriction_n
 def simplex(func, restricitons):
     '''
     Calculates optimal result with regards to restrictions
+    :param func: list of variables of maximaliazation function
+    :param restrictions: list of restrictions of variables without slack variables
+    :return: tuple with solved coefficients and optimal maximum value of function
     '''
     pass
