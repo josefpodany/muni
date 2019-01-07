@@ -33,14 +33,35 @@ def simplex_method(func, restr):
             for j in range(len(restrictions[i])):
                 restrictions[i] += [1] if j == i else [0]
             restrictions[i].append(total)
+        iterate(function, restrictions)
     else:
         raise ValueError("Restrictions of simplex method do not have larger\
  amount of variables than maximaliazation function by one")
 
 
-def iterate(function, restriction):
-    # TODO: documentation, implentation
+def iterate(function, restrictions):
+    '''
+    Calculates one iteration of simplex.
+    :param function: list of variables of negated maximalization function
+    with slack variables
+    :param restricitons: 2D list of restrictions of varibles with slack
+    variables
+    :return: Whether the simplex has been solved or not
+    '''
     if any(i < 0 for i in function):
+        # choose first negative variable in header
+        header_index = function.index(next(i for i in function if i < 0))
+        row_index = 0
+        for i in restrictions:
+            if (restrictions[i][-1] / restrictions[i][header_index]
+                    < restrictions[row_index][-1]
+                    / restrictions[row_index][header_index]):
+                # compares two ratios in simplex in given row and last column
+                row_index = i
+        ratio = function[header_index] / restrictions[row_index][header_index]
+        # TODO: whole elimination process
+        for i in restrictions[row_index]:
+            function[i] = restrictions[row_index][i] / ratio
         return False
     return True
 
