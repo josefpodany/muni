@@ -4,3 +4,4 @@ Projects from my bachelor's studies in Mathematical Informatics at Masaryk Unive
 ## Table of contents
 
 - Pythons and Dungeons - text-based RPG-like game in terminal written in Python
+- math - solving different math problems
