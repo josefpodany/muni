@@ -13,9 +13,9 @@ def simplex_method(func, restr):
     '''
     Calculates optimal result with regards to restrictions
     :param func: list of variables of maximaliazation function
-    :param restr: 2D list of restrictions of variables without slack 
+    :param restr: 2D list of restrictions of variables without slack
     variables
-    :return: tuple with solved coefficients and optimal maximum value of 
+    :return: tuple with solved coefficients and optimal maximum value of
     function
 
     example:
