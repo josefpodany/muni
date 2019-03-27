@@ -1,0 +1,46 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{multicol}               % allows to fit columns onto page
+\usepackage[margin=0.8in]{geometry} % set page margins to fit more text onto page
+
+\begin{document}
+\section*{MB202 cheatsheet}
+
+\begin{multicols}{2}
+    \section*{Goniometrické funkce}
+    \section*{Limity}
+        \[ {x}^a << {\beta}^x << x! << {x}^x \]
+        \[ \lim_{x \rightarrow \infty} {(1 + \frac{a}{x})}^x = e^a \]
+        \[ \lim_{x \rightarrow 0} {\frac{\sin(x)}{x} = 1} \]
+        \subsection*{L'Hospitalovo pravidlo}
+            TODO\@: přidat tvary, pro které to platí (a hezky vycentrovat)
+            \[  \lim_{x \rightarrow n} \frac{f(x)'}{g(x)'} \]    
+    \section*{Taylorův polynom}
+        \[ T_n(x) = \sum_{i=0}^{n} \frac{f^{(i)}(x_0)}{i!}\cdot{(x - x_0)}^i \]
+        \[ R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}\cdot{(x - x_0)}^{n+1} \]
+        \[ f(x) = T_n(x) + R_n(x) \]
+    \section*{Derivace}
+        \[ ({x}^r)' = {rx}^{r-1} \]
+        \[ (\sin(x))' = \cos(x) \]
+        \[ (\cos(x))' = -\sin(x) \]
+        \[ (\tan(x))' = \frac{1}{{\cos}^2 x} \]
+        \[ (e^x)' = e^x \]
+        \[ (\ln(x))' = \frac{1}{x} \]
+        \[ (a^x)' = a^x \ln(a) \]
+        \[ (\log_a(x))' = \frac{1}{x\ln(a)} \]
+        \[ (\arcsin(x))' = \frac{1}{\sqrt{1-x^2}} \]
+        \[ (\arctan(x))' = \frac{1}{\sqrt{1-x^2}} \]
+        \[ \sinh(x):= \frac{e^x - e^{-x}}{2} \]
+        \[ \cosh(x) := \frac{e^x + e^{-x}}{2} = (\sinh(x))' \]
+        \[ \tanh(x) := \frac{\sinh(x)}{\cosh(x)}\]
+        \[ \tanh(x) := \frac{\cosh(x)}{\sinh(x)}\]
+    \section*{Integrály}
+    \begin{align*}
+        \int(f(x)=y)
+    \end{align*}
+\end{multicols}
+
+
+
+\end{document}
