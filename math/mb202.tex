@@ -3,62 +3,85 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{multicol}               % allows to fit columns onto page
+\usepackage{vwcol}                  % different sized columns
 \usepackage[margin=0.6in]{geometry} % set page margins to fit more text onto page
 
 \begin{document}
 \section*{MB202 cheatsheet}
 
-\begin{multicols}{2}
-    \section*{Goniometrické funkce}
-        \begin{align*}
-             \sin^2x &= \frac{1}{2} \cdot \left[ 1-\cos(2x) \right] \\
-             \cos^2x &= \frac{1}{2} \cdot \left[ 1+\cos(2x) \right] \\
-             % \tan\frac{x}{2} &= \sinx = \frac{2t}{1+t^2} \\ % todo: srovant
-        \end{align*}
+\begin{multicols*}{2}
+    \section*{Goniometrické funkce}        
+        \[ \sin^2x = \frac{1}{2} \cdot \left[ 1-\cos(2x) \right] \]
+        \[ \cos^2x = \frac{1}{2} \cdot \left[ 1+\cos(2x) \right] \]
+        \[ \sin(2x) = 2\sin(x) \cdot \cos(x) \]
+        \[ \cos(2x) = \cos^2(x) - \sin^2(x) \]
+        \begin{multicols*}{2}
+            \text{Pro liché funkce:}
+            \[ \tan\frac{x}{2} =t: s\]
+            \[ \sin(x) = \frac{2t}{1+t^2} \]
+            \[ \cos(x) = \frac{1-t^2}{1+t^2} \]
+            \[ dx = \frac{2dt}{1+t^2} \]
+            \vfill{}
+            \columnbreak{}
+            \text{Pro sudé funkce:}
+            \[\tan(x) =t: \]
+            \[\sin^2x = \frac{t^2}{1+t^2}\]
+            \[\cos^2x = \frac{1}{1+t^2}\]
+            \[ dx = \frac{dt}{1+t^2}\]
+    \end{multicols*}
+    \[\sin^2x = \frac{1}{2} \cdot \left[ 1 - \cos(2x) \right]\]
+    \[\cos^2x = \frac{1}{2} \cdot \left[ 1 + \cos(2x) \right]\]
     \section*{Limity}
         \[ {x}^a << {\beta}^x << x! << {x}^x \]
-        \[ \lim_{x \rightarrow \infty} {\left(1 + \frac{a}{x}\right)}^x = e^a \]
-        \[\lim_{n \rightarrow \infty} {\left(1 + \frac{1}{n}\right)}^n = e \]
         \begin{align*}
-            {\lim_{x \rightarrow 0} {\frac{e^x - 1}{x}} = 1} & \quad {\lim_{x \rightarrow 0} {\frac{\arcsin(x)}{x} = 1}}\\
-            {\lim_{x \rightarrow 0} \frac{\tan(x)}{x} = 1} & \quad {\lim_{x \rightarrow 0} {\frac{\sin(x)}{x} = 1}}
+            {\lim_{n \rightarrow \infty} {\left(1 + \frac{1}{n}\right)}^n = e} \quad & {\lim_{x \rightarrow \infty} {\left(1 + \frac{a}{x}\right)}^x = e^a} \\
+            {\lim_{x \rightarrow 0} {\frac{e^x - 1}{x}} = 1} \quad & {\lim_{x \rightarrow 0} {\frac{\arcsin(x)}{x} = 1}}\\
+            {\lim_{x \rightarrow 0} \frac{\tan(x)}{x} = 1} \quad & {\lim_{x \rightarrow 0} {\frac{\sin(x)}{x} = 1}}
         \end{align*}
-        \subsection*{L'Hospitalovo pravidlo}
+        \text{L'Hospitalovo pravidlo:}
             \[  \lim_{x \rightarrow n} \frac{f(x)'}{g(x)'} \]    
     \section*{Taylorův polynom}
         \[ T_n(x) = \sum_{i=0}^{n} \frac{f^{(i)}(x_0)}{i!}\cdot{(x - x_0)}^i \]
         \[ R_n(x) = \frac{f^{(n+1)}(c)}{(n+1)!}\cdot{(x - x_0)}^{n+1} \]
         \[ f(x) = T_n(x) + R_n(x) \]
     \section*{Derivace}
-        \[ ({x}^r)' = {rx}^{r-1} \]
-        \[ (\sin(x))' = \cos(x) \]
-        \[ (\cos(x))' = -\sin(x) \]
-        \[ (\tan(x))' = \frac{1}{{\cos}^2 x} \]
         \[ (e^x)' = e^x \]
-        \[ (\ln(x))' = \frac{1}{x} \]
         \[ (a^x)' = a^x \ln(a) \]
-        \[ (\log_a(x))' = \frac{1}{x\ln(a)} \]
-        \[ (\arcsin(x))' = \frac{1}{\sqrt{1-x^2}} \]
-        \[ (\arctan(x))' = \frac{1}{\sqrt{1-x^2}} \]
-        \[ \sinh(x):= \frac{e^x - e^{-x}}{2} \]
-        \[ \cosh(x) := \frac{e^x + e^{-x}}{2} = (\sinh(x))' \]
-        \[ \tanh(x) := \frac{\sinh(x)}{\cosh(x)}\]
-        \[ \tanh(x) := \frac{\cosh(x)}{\sinh(x)}\]
+        \[ (\ln x)' = \frac{1}{x} \]
+        \[ (\log_a x)' = \frac{1}{x\ln a} \]
+        \[ (\sin x)' = \cos x \]
+        \[ (\cos x)' = -\sin x \]
+        \[ (\tan x)' = \frac{1}{{\cos}^2 x} \]
+        \[ (\arcsin x)' = \frac{1}{\sqrt{1-x^2}} \]
+        \[ (\arctan x)' = \frac{1}{1+x^2} \]
     \section*{Integrály}
+        \[ \int dx = x+C \]
+        \[ \int a^x dx = \frac{a^x}{\ln a} + C\]
+        \[ \int x^n dx = \frac{x^{n+1}}{n+1} + C\]
+        \[ \int e^{ax} dx = \frac{1}{a} \cdot e^{ax} + C \]
+        \[ \int \sin(ax) dx = -\frac{1}{a}\cos(ax) + C \]
+        \[ \int \cos(ax) dx = \frac{1}{a}\sin(ax) + C \]
+        \[ \int \frac{1}{\cos^2(ax)} dx = \frac{1}{a} \cdot \tan(ax) + C \]
+        \[ \int \frac{1}{\sin^2(ax)} dx = -\frac{1}{a} \cdot \cot(ax) + C \]
+        \[ \int \frac{1}{\sqrt{a^2 - x^2}} dx = \arcsin\frac{a}{a} + C \]
+        \[ \int \frac{1}{\sqrt{a^2 + x^2}} dx = \ln \left| x + \sqrt{x^2 + a} \right| + C \]
+        \[ \int \frac{1}{a^2 + x^2}dx = \frac{1}{a} \cdot \arctan\frac{x}{a} + C \]
+        \[ \int \frac{1}{a^2 - x^2}dx = \frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right| + C \]
+        \[ \int \frac{1}{x+a}dx = \ln \left| x+a \right| + C \]
+        \[ \int \frac{f'(x)}{f(x)}dx = \ln\left| f(x)\right| + C \]
+        \[ \int \frac{dx}{{(x-x_0)}^2 + a^2} = \frac{1}{a} \cdot \frac{x-x_0}{a} + C \]
         \text{Substituce: } 
         \begin{align*}
             { \int f(\varphi(x)) \cdot \varphi'(x)dx = \int f(y)dx }\\
             { y = \varphi(x) \rightarrow dy = \varphi'(x) \cdot dx }
         \end{align*}
         \text{Pér partes: } \[ \int uv' = uv - \int u'v \]
-        \[ \int \frac{f'(x)}{f(x)}dx = \ln\mid{f(x)\mid} + C \]
-        \[ \int \frac{dx}{{(x-x_0)}^2 + a^2} = \frac{1}{a} \cdot \frac{x-x_0}{a} + C \]
         \text{Vícenásobné kořeny v \(\mathbb{C}\):}
         \[ K_{n+1}(x_0, a) = \frac{1}{a^2} \cdot \left[ \frac{2n-1}{2n} \cdot K_n(x_0, a) + \frac{1}{2n} \cdot \frac{x - x_0}{{({(x-x_0)}^2 + a^2)}^n} \right] \]
-    \section*{Zbytek}
+        \section*{Zbytek}
         \[ \sqrt[n]{n!} = \sqrt[2n]{2\pi n}\left(\frac{n}{e}\right) \]
-\end{multicols}
+        \[ \sinh(x):= \frac{e^x - e^{-x}}{2} \]
+        \[ \cosh(x) := \frac{e^x + e^{-x}}{2} = (\sinh(x))' \]
+\end{multicols*}
 
-
-TODOS\@: dopsat tips\&tricks k per partes a substituci, l'Hospital, vše vycentrovat
 \end{document}
