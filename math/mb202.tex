@@ -1,20 +1,29 @@
 \documentclass[a4paper]{article}
 \usepackage[utf8]{inputenc}
+\usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{multicol}               % allows to fit columns onto page
-\usepackage[margin=0.8in]{geometry} % set page margins to fit more text onto page
+\usepackage[margin=0.6in]{geometry} % set page margins to fit more text onto page
 
 \begin{document}
 \section*{MB202 cheatsheet}
 
 \begin{multicols}{2}
     \section*{Goniometrické funkce}
+        \begin{align*}
+             \sin^2x &= \frac{1}{2} \cdot \left[ 1-\cos(2x) \right] \\
+             \cos^2x &= \frac{1}{2} \cdot \left[ 1+\cos(2x) \right] \\
+             % \tan\frac{x}{2} &= \sinx = \frac{2t}{1+t^2} \\ % todo: srovant
+        \end{align*}
     \section*{Limity}
         \[ {x}^a << {\beta}^x << x! << {x}^x \]
-        \[ \lim_{x \rightarrow \infty} {(1 + \frac{a}{x})}^x = e^a \]
-        \[ \lim_{x \rightarrow 0} {\frac{\sin(x)}{x} = 1} \]
+        \[ \lim_{x \rightarrow \infty} {\left(1 + \frac{a}{x}\right)}^x = e^a \]
+        \[\lim_{n \rightarrow \infty} {\left(1 + \frac{1}{n}\right)}^n = e \]
+        \begin{align*}
+            {\lim_{x \rightarrow 0} {\frac{e^x - 1}{x}} = 1} & \quad {\lim_{x \rightarrow 0} {\frac{\arcsin(x)}{x} = 1}}\\
+            {\lim_{x \rightarrow 0} \frac{\tan(x)}{x} = 1} & \quad {\lim_{x \rightarrow 0} {\frac{\sin(x)}{x} = 1}}
+        \end{align*}
         \subsection*{L'Hospitalovo pravidlo}
-            TODO\@: přidat tvary, pro které to platí (a hezky vycentrovat)
             \[  \lim_{x \rightarrow n} \frac{f(x)'}{g(x)'} \]    
     \section*{Taylorův polynom}
         \[ T_n(x) = \sum_{i=0}^{n} \frac{f^{(i)}(x_0)}{i!}\cdot{(x - x_0)}^i \]
@@ -36,11 +45,20 @@
         \[ \tanh(x) := \frac{\sinh(x)}{\cosh(x)}\]
         \[ \tanh(x) := \frac{\cosh(x)}{\sinh(x)}\]
     \section*{Integrály}
-    \begin{align*}
-        \int(f(x)=y)
-    \end{align*}
+        \text{Substituce: } 
+        \begin{align*}
+            { \int f(\varphi(x)) \cdot \varphi'(x)dx = \int f(y)dx }\\
+            { y = \varphi(x) \rightarrow dy = \varphi'(x) \cdot dx }
+        \end{align*}
+        \text{Pér partes: } \[ \int uv' = uv - \int u'v \]
+        \[ \int \frac{f'(x)}{f(x)}dx = \ln\mid{f(x)\mid} + C \]
+        \[ \int \frac{dx}{{(x-x_0)}^2 + a^2} = \frac{1}{a} \cdot \frac{x-x_0}{a} + C \]
+        \text{Vícenásobné kořeny v \(\mathbb{C}\):}
+        \[ K_{n+1}(x_0, a) = \frac{1}{a^2} \cdot \left[ \frac{2n-1}{2n} \cdot K_n(x_0, a) + \frac{1}{2n} \cdot \frac{x - x_0}{{({(x-x_0)}^2 + a^2)}^n} \right] \]
+    \section*{Zbytek}
+        \[ \sqrt[n]{n!} = \sqrt[2n]{2\pi n}\left(\frac{n}{e}\right) \]
 \end{multicols}
 
 
-
+TODOS\@: dopsat tips\&tricks k per partes a substituci, l'Hospital, vše vycentrovat
 \end{document}
