@@ -1,0 +1,42 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{dsfont}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{multicol}               % allows to fit columns onto page
+\usepackage{vwcol}                  % different sized columns
+\usepackage[margin=0.6in]{geometry} % set page margins to fit more text onto page
+
+\begin{document}
+\section{Regulární jazyky}
+\begin{itemize}
+    \item Regulární jazyky jsou rozpoznávány přesně konečnými automaty
+    \item Ke každému FA M existuje ekvivalentní FA M' s totální přechodovou funkcí (pomocí zadefinování výlevky) 
+    \item Synchronní paralelní zpracování je také konzervativní rozšíření (oba automaty by však ale měly mít totální přechodovou fci kvůli omezení "zadrhnutí")
+\end{itemize}
+\subsection*{Pumping Lemma (vedení důkazu)}
+\begin{enumerate}
+    \item Buď \(n \in \mathds{N}\) a slovo w patří do L. (Najdu si slovo w tak, aby to pro mě bylo co nejlehčí, většinou půjdu po \( a^nb^n\), nebo tak něco)
+    \item Slovo w rozdělíme na 3 části x, y a z tak, že \(|xy| \leq n\) a \(|y| \geq 1\).
+    \item \# Nyní chytře zvolíme 3 části tak, abych pomocí nějakého čísla následným umocněním části y vyběhl mimo jazyk.
+    \item Pro \(i = (\text{nějaké číslo a})\) dostáváme (vyčíslit \(\rightarrow\)) \( xy^{a}z \).
+    \item \# Součty mocnin nevyhovují zadání \(\rightarrow \) profit.
+\end{enumerate}
+\subsection*{Myhillova-Nerodova věta}
+L je regulární \(\Leftrightarrow \) L je sjednocením některých tříd rozkladu \( \Sigma^* /_\sim \), kde \(\sim \) je nějaká pravá kongruence s konečným indexem \(\Leftrightarrow \) index \( \sim_L \)je konečný
+\begin{itemize}
+    \item \(\sim \) je pravá kongruence \(\xLeftrightarrow{\text{def}}\) \(\sim \) je ekvivalence a \(\forall x,y,z \in \Sigma^*: x \sim y \Rightarrow xz \sim yz \)
+    \item index je počet tříd ekvivalence
+    \item minimální DFA odpovídá \(\sim_L \)
+\end{itemize}
+\subsection*{Vedení důkazu}
+\begin{enumerate}
+    \item Nechť \(\sim \) je pravá kongruence s konečným indexem k taková, že L je sjednocením některých tříd rozkladu \( \Sigma^* /_\sim \). (Mám k tříd, vezmu k+1 slov \(\Rightarrow \) Dirichletův princip)
+    \item Pak alespoň 2 ze slov w, v\ldots musí být v relaci \(\sim \).
+    \item Tedy existují i, j taková, že \( 0 \leq i < j \leq k\) a musí platit \( w^i \sim v^j \).
+    \item Protože \(\sim \) je pravá kongruence, pak \( w^i.w^i \sim v^j.w^i\) (dopočítám mocniny \(\Rightarrow \) spor.)
+\end{enumerate}
+\subsection*{Alg. pro eliminaci nedosažitelných stavů}
+Procházím stav po stavu a pokud existuje přechod o jeden dál, tak daný stav přidám do výstupní množiny a posunu se dál. Končím, jakmile v jednom kroku nic nepřidám.
+\end{document}

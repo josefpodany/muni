@@ -55,10 +55,10 @@
         \[ (\arcsin x)' = \frac{1}{\sqrt{1-x^2}} \]
         \[ (\arctan x)' = \frac{1}{1+x^2} \]
     \section*{Integrály}
-        \[ \int dx = x+C \]
-        \[ \int a^x dx = \frac{a^x}{\ln a} + C\]
-        \[ \int x^n dx = \frac{x^{n+1}}{n+1} + C\]
-        \[ \int e^{ax} dx = \frac{1}{a} \cdot e^{ax} + C \]
+        \begin{align*} % TODO: opravit
+            {\int dx } &= {x+C} \quad {\int a^x dx} &= {\frac{a^x}{\ln a} + C} \\
+            {\int x^n dx} &= {\frac{x^{n+1}}{n+1} + C}  {\int e^{ax} dx} &= {\frac{1}{a} \cdot e^{ax} + C}
+        \end{align*}
         \[ \int \sin(ax) dx = -\frac{1}{a}\cos(ax) + C \]
         \[ \int \cos(ax) dx = \frac{1}{a}\sin(ax) + C \]
         \[ \int \frac{1}{\cos^2(ax)} dx = \frac{1}{a} \cdot \tan(ax) + C \]
@@ -68,8 +68,8 @@
         \[ \int \frac{1}{a^2 + x^2}dx = \frac{1}{a} \cdot \arctan\frac{x}{a} + C \]
         \[ \int \frac{1}{a^2 - x^2}dx = \frac{1}{2a}\ln\left|\frac{a+x}{a-x}\right| + C \]
         \[ \int \frac{1}{x+a}dx = \ln \left| x+a \right| + C \]
-        \[ \int \frac{f'(x)}{f(x)}dx = \ln\left| f(x)\right| + C \]
-        \[ \int \frac{dx}{{(x-x_0)}^2 + a^2} = \frac{1}{a} \cdot \frac{x-x_0}{a} + C \]
+        {\[ \int \frac{f'(x)}{f(x)}dx = \ln\left| f(x)\right| + C \]}
+        {\[ \int \frac{dx}{{(x-x_0)}^2 + a^2} = \frac{1}{a} \cdot \frac{x-x_0}{a} + C \]}
         \text{Substituce: } 
         \begin{align*}
             { \int f(\varphi(x)) \cdot \varphi'(x)dx = \int f(y)dx }\\
