@@ -1,10 +1,15 @@
 # MUNI
 
-Projects from my bachelor's studies in Mathematical Informatics at Masaryk University. All projects were uploaded with consent of my teachers and TAs.
+Projects from my bachelor's studies in Mathematical Informatics at Masaryk University.
 
-## Table of contents
+## Table of Contents
 
--   Pythons and Dungeons - text-based RPG-like game in terminal written in Python
--   math - collection of math related problems solved using Python
-    -   simplex - solving linear programming problems (simplex method)
-    -   8puzzle - solving 8 puzzle problem
+- `Pythons&Dungeons` - text-based RPG-like game in terminal written in Python
+- `bruteforcer` - brute-force password dictionary attack written in C
+- `math` - collection of math related problems, theory of computation.
+  Some are solved with Python.
+  - `simplex` - solving linear programming problems (simplex method)
+  - `8puzzle` - solving 8 puzzle problem
+  - `automata.pdf` - fundamental lemmas and ideas of proofs (in czech)
+  - `mb202.pdf` - Calc II formulas (in czech)
+  - `sources/` - Latex source files of `.pdf` files
